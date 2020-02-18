@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Insult Generator</title>
+		<link href='http://fonts.googleapis.com/css?family=Trocchi' rel='stylesheet' type='text/css'/>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript">
+			var group_b = [
+				"total", "utter", "stupid", "absolute", "thourough",
+				"mega","massive", "super", 
+				"humongous", "exceeding", "ultra", "enourmous", "vast", "immense",
+				"incredible", "unbelievable", "huge", "tremendous",
+				"quintessential",
+				"brainless", "silly", "idiotic", "senseless", "childish", "rediculous",
+				"foolish", "ludicrous", "revolting", "ugly", "stinking", "putrid",
+				"unhinged",	"smelly", "daft", "stupid", "fat", "foul", "mouldy", "terrible",
+				"obese", "psychotic", "fetid", "thick"
+			];
+			
+			var group_c = [
+				"wank", "bell", "cum", "sperm", "twat", "cock", "minge", "toss", "spunk", "tit",
+				"ring", "anus", "flap", "sphincter", "arse", "testicle", "nipple", "piss",
+				"bum", "fuck", "shit", "quim", "scrotum", "penis", "flap", "semen", "cack", "cock",
+				"ham"
+			];
+			
+			var group_d = [
+				"socket", "brick", 	"bucket", "wizard", "guzzler", "sponge", "biscuit", "bandit",
+				"gobbler", "monkey", "stick", "lord", "weasel", "muncher", "ferret", "licker",
+				"lizard", "gusset", "trench", "lover", "gurgler", "cake", "sandwich",
+				"garden", "toucher", "fissure", "rupture", "mitten"
+			];
+			
+			$(function()
+			{
+				init_insult();	
+			});
+			
+			function init_insult()
+			{
+				$("a").click(function()
+				{
+					insult();
+					
+					return false;	
+				});
+				
+				insult();	
+			}
+			
+			function insult()
+			{
+				$("#group_b").html(random_word(group_b));
+				$("#group_c").html(random_word(group_c));
+				$("#group_d").html(random_word(group_d));
+			}
+			
+			function random_word(words)
+			{
+				var total_words = words.length;
+				
+				var index = Math.floor( Math.random() * (total_words))
+				
+				return words[index];
+			}
+		</script>
+		<style type="text/css">
+			body{
+				background-color:#f66;
+				margin:150px 50px 50px 50px;
+				text-align:center;
+			}
+		
+			h1{
+				font-family: 'Trocchi', serif;
+				font-weight:normal;
+				color:#fff;
+				font-size:60px;
+			}
+			
+			a{
+				text-decoration:none;
+				color:#eee;
+				font-size:20px;
+			}
+			
+			a:hover{
+				text-decoration:underline;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>
+			<span>You</span>
+			<span id="group_b">Blank</span>
+			<span id="group_c">Blank</span>
+			<span id="group_d">Blank</span>.
+		</h1>
+		<p><a href="#">Another</a></p>
+	</body>
+</html>
