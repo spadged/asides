@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Cutout Frenzy</title>
+		<style type="text/css">
+			html,body{
+				height:100%;
+				position:relative;
+				padding:0;
+				margin:0;
+				overflow:hidden;
+				font-family:Arial;
+			}
+			
+			img{
+				position:absolute;
+				bottom:0;
+				left:0;
+			}
+			
+			#btnRandom{
+				position:absolute;
+				top:20px;
+				right:20px;
+				height:40px;
+				padding:0 30px 0 30px;
+				font-size:18px;
+				background-color:#fff;
+				border:1px solid #999;
+				text-decoration:none;
+				line-height:40px;
+				
+				-moz-border-radius:4px;
+				-webkit-border-radius:4px;
+				border-radius:4px;
+				
+				text-transform:capitalize;
+				
+				color:#444;
+				
+				z-index:50;
+			}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script>
+			$(function()
+			{
+				parseRSS("https://www.reddit.com/r/cutouts/.rss", cutoutFrenzy, 'random');
+			});
+			
+			function parseRSS(url, callback, placement)
+			{
+				$.ajax({
+					url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=20&callback=?&q=' + encodeURIComponent(url),
+					dataType: 'json',
+					success: function(data)
+					{
+						callback(data.responseData.feed, placement);
+					}
+				});
+			}
+			
+			function cutoutFrenzy(data, placement)
+			{
+				var $body = $('body');
+				
+				var viewportHeight = $(window).height();
+				var viewportWidth = $(window).width();
+				
+				jQuery.each(data.entries, function(index, item)
+				{
+					var media = item.mediaGroups[0].contents[0];
+					
+					if(media.medium == "image" && media.type == "image/png")
+					{
+						var styles = '';
+						
+						var orientation = (media.height > media.width) ? "portrait" : "landscape";
+						
+						if(media.width > viewportWidth && media.height > viewportHeight)
+						{
+							if(orientation == "portrait")
+							{
+								styles += 'width:'+viewportWidth+"px; ";
+							}
+							else
+							{
+								styles += 'height:'+viewportHeight+"px; ";	
+							}
+						}
+						else if(media.width > viewportWidth)
+						{
+							styles += 'width:'+viewportWidth+"px; ";	
+						}
+						else if(media.height > viewportHeight )
+						{
+							styles += 'height:'+viewportHeight+"px; ";	
+						}
+						
+						var area = media.width * media.height;
+						
+						styles += "z-index: -" + area + "; ";
+						
+						var image = '<img ';
+						image += 'src="' + media.url + '" ';
+						image += 'style="' + styles + '" ';
+						image += 'alt="' + item.title + '"/>';
+						
+						$body.append(image);
+					}
+				});	
+				
+				switch(placement)
+				{
+					case 'random':
+						layoutRandomise();
+						break;
+					case 'center':
+						layoutCenter();
+						break;	
+				}
+				
+				$("#btnRandom").click(function()
+				{
+					layoutRandomise();
+					
+					return false;	
+				});
+			}
+			
+			function layoutCenter()
+			{
+				var viewportHeight = $(window).height();
+				var viewportWidth = $(window).width();
+					
+				$("img").each(function(index, element)
+				{
+					var $me = $(element);
+					
+					var top = (viewportHeight / 2) - ($me.height() / 2);
+					var left = (viewportWidth / 2) - ($me.width() / 2);
+					
+					$me.css({'top':top+"px", 'left':left+"px"});
+				});
+			}
+			
+			function layoutRandomise()
+			{
+				var viewportHeight = $(window).height();
+				var viewportWidth = $(window).width();
+				
+				$("img").each(function(index, element)
+				{
+					var $me = $(element);
+					
+					var top = Math.floor(Math.random() * (viewportHeight - $me.height())) ;
+					var left = Math.floor(Math.random() * (viewportWidth - $me.width()));
+					var index = Math.floor(Math.random() * 20);
+							
+					$me.css({'z-index':index});
+					
+					$me.css({'top':top+"px", 'left':left+"px"});
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<a href="#" id="btnRandom">randomise</a>
+	</body>
+</html>
