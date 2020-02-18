@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="strava.com iPhone" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+ <trk>
+  <name>Tour de tent</name>
+  <trkseg>
+   <trkpt lat="43.7025840" lon="-0.2579740">
+    <ele>81.6</ele>
+   </trkpt>
+   <trkpt lat="43.7027210" lon="-0.2579680">
+    <ele>81.8</ele>
+   </trkpt>
+   <trkpt lat="43.7027540" lon="-0.2579550">
+    <ele>81.8</ele>
+   </trkpt>
+   <trkpt lat="43.7028540" lon="-0.2586020">
+    <ele>82.0</ele>
+   </trkpt>
+   <trkpt lat="43.7028660" lon="-0.2586520">
+    <ele>82.0</ele>
+   </trkpt>
+   <trkpt lat="43.7028820" lon="-0.2586840">
+    <ele>82.0</ele>
+   </trkpt>
+   <trkpt lat="43.7029090" lon="-0.2586860">
+    <ele>82.0</ele>
+   </trkpt>
+   <trkpt lat="43.7029720" lon="-0.2586640">
+    <ele>81.6</ele>
+   </trkpt>
+   <trkpt lat="43.7030040" lon="-0.2586730">
+    <ele>81.4</ele>
+   </trkpt>
+   <trkpt lat="43.7030380" lon="-0.2586830">
+    <ele>81.2</ele>
+   </trkpt>
+   <trkpt lat="43.7030760" lon="-0.2586750">
+    <ele>80.9</ele>
+   </trkpt>
+   <trkpt lat="43.7031080" lon="-0.2586570">
+    <ele>80.7</ele>
+   </trkpt>
+   <trkpt lat="43.7030950" lon="-0.2586170">
+    <ele>80.8</ele>
+   </trkpt>
+   <trkpt lat="43.7030660" lon="-0.2586240">
+    <ele>81.0</ele>
+   </trkpt>
+   <trkpt lat="43.7030210" lon="-0.2586390">
+    <ele>81.3</ele>
+   </trkpt>
+   <trkpt lat="43.7029890" lon="-0.2586380">
+    <ele>81.5</ele>
+   </trkpt>
+   <trkpt lat="43.7030190" lon="-0.2586130">
+    <ele>81.3</ele>
+   </trkpt>
+   <trkpt lat="43.7030440" lon="-0.2585930">
+    <ele>81.2</ele>
+   </trkpt>
+   <trkpt lat="43.7030180" lon="-0.2585680">
+    <ele>81.4</ele>
+   </trkpt>
+   <trkpt lat="43.7030530" lon="-0.2586120">
+    <ele>81.1</ele>
+   </trkpt>
+   <trkpt lat="43.7030650" lon="-0.2586560">
+    <ele>81.0</ele>
+   </trkpt>
+   <trkpt lat="43.7031040" lon="-0.2586860">
+    <ele>80.7</ele>
+   </trkpt>
+   <trkpt lat="43.7031500" lon="-0.2586770">
+    <ele>80.4</ele>
+   </trkpt>
+   <trkpt lat="43.7029810" lon="-0.2586840">
+    <ele>81.6</ele>
+   </trkpt>
+   <trkpt lat="43.7029410" lon="-0.2586850">
+    <ele>81.8</ele>
+   </trkpt>
+   <trkpt lat="43.7029580" lon="-0.2586430">
+    <ele>81.7</ele>
+   </trkpt>
+   <trkpt lat="43.7029400" lon="-0.2586790">
+    <ele>81.8</ele>
+   </trkpt>
+   <trkpt lat="43.7029440" lon="-0.2586410">
+    <ele>81.8</ele>
+   </trkpt>
+   <trkpt lat="43.7029170" lon="-0.2586050">
+    <ele>82.0</ele>
+   </trkpt>
+   <trkpt lat="43.7028880" lon="-0.2585830">
+    <ele>82.0</ele>
+   </trkpt>
+  </trkseg>
+ </trk>
+</gpx>
